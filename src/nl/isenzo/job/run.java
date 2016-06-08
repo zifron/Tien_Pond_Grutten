@@ -30,7 +30,7 @@ public class Run {
                     //kringPositie++;
                     einde_kring = c.kring.size();
                     System.out.println("Currently the arry list has following elements: " + c.kring);
-                    if (kringPositie >= einde_kring){
+                    if (kringPositie > einde_kring){
                         kringPositie = 1;
                     }
                     continue;
