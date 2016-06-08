@@ -18,26 +18,23 @@ public class Run {
         // removing 1 item at the time when the iteration has come to 18.
         // lees 18 keer door de loop heen
         long einde_kring = c.kring.size();
-        long kringPositie= 1;
-        while (c.kring.size() >= 1){
-            for (int i = 1; i <= iteratie; i++){
+        int kringPositie= 1;
+            for (int i = 1; i <= iteratie && c.kring.size() > 1; i++){
+//                System.out.println("voor de controle van i == 18 : " + i + "kring: " + kringPositie);
                 //loop door de kring heen. De 18e interatie moet uit de kring worden verwijderd.
 //                System.out.println(c.kring(kringPositie));
                 if (i == 18){
-                    System.out.println("FOR KRING 6 x kringpositie = " + kringPositie);
-                    c.kring.remove(kringPositie);
-                    //i = 0;
-                    //kringPositie= 0;
+                    System.out.println("i == 18 is juist!! i =  "+  i + "kring: " + kringPositie + "waarde is: " + c.kring.get(kringPositie-1) );
+                    c.kring.remove(kringPositie - 1);
+                    i = 0;
+                    //kringPositie++;
                     einde_kring = c.kring.size();
                     System.out.println("Currently the arry list has following elements: " + c.kring);
-                    // let us print all the values available in list
-                    for (long value : c.kring) {
-                        System.out.println("Value = " + value);
+                    if (kringPositie >= einde_kring){
+                        kringPositie = 1;
                     }
-
+                    continue;
                 }
-//                System.out.println(kringPositie);
-//                System.out.println(einde_kring);
                 if (kringPositie >= einde_kring){
                     kringPositie = 1;
                 }
@@ -46,9 +43,8 @@ public class Run {
                 }
 
             }
-        }
-//        System.out.println("Last elements: " + c.kring);
-//        System.out.println(c.kring.size());
+        System.out.println("ArrayList After : " + c.kring);
+
     }
 
 

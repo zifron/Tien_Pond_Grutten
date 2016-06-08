@@ -9,15 +9,15 @@ public class Cirkel {
 //    long aantal_Leden = 6;
 //    int nrIteratie;
 //    int rest = 1;
-    public ArrayList<Long> kring= new ArrayList<>();
+    public ArrayList<String> kring= new ArrayList<>();
 
     public Cirkel(){
     }
 
     public void createArrayList(long leden){
-        long mens = 10;
+        long mens = 1;
         for (int i = 0; i < leden; i++) {
-            this.kring.add(mens);
+            this.kring.add(String.valueOf(mens));
             mens ++;
         }
     }
